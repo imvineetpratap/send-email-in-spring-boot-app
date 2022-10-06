@@ -1,0 +1,17 @@
+.center{
+    text-align: center;
+    margin-top: 50px;
+}
+.field{
+    width: 100%;
+}
+.card{
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+}
+
+/* .label_setting{
+    text-align: center !important;
+} */

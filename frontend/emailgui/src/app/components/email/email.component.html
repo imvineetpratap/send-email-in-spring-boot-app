@@ -1,0 +1,41 @@
+<div class="container">
+
+    <mat-card class="card">
+        <mat-card-title>Send Email to Anyone..</mat-card-title>
+        <mat-card-subtitle>Compose Email</mat-card-subtitle>
+        <mat-card-actions class="center">
+            <!-- <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button> -->
+            <form (ngSubmit)="doSubmitForm()">
+                <!-- {{data|json}} -->
+                <mat-form-field class="field" appearance="outline">
+                    <mat-label class="label_setting">recipient</mat-label>
+                    <!-- property binding and event binding by ngModel -->
+                    <input name="recipient" [(ngModel)]="data.recipient" matInput>
+                </mat-form-field>
+                <mat-form-field class="field" appearance="outline">
+                    <mat-label class="label_setting">subject</mat-label>
+                    <input name="subject" [(ngModel)]="data.subject" matInput>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width field" appearance="outline">
+                    <mat-label class="label_setting">msgBody</mat-label>
+                    <textarea name="msgBody" [(ngModel)]="data.msgBody" matInput rows="6"
+                        placeholder="write your message here"></textarea>
+                </mat-form-field>
+
+                <mat-spinner *ngIf="flag" style="margin:auto;"></mat-spinner>
+                <button class="center" mat-raised-button color="warn" type="reset">
+                    Reset
+                </button>
+                <button [disabled]="flag" class="center" mat-raised-button color="primary" type="submit">
+                    Send
+                </button>
+            </form>
+
+            {{data | json}}
+        </mat-card-actions>
+    </mat-card>
+
+
+</div>
